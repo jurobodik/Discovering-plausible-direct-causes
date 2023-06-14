@@ -6,4 +6,4 @@ Welcome to the supplementary package of the manuscript 'Discovering-plausible-di
 
 -In the 'Simulations' folder you can find scripts to recreate all results presented in the manuscript. They are not extremly well commented, but I hope they are understandable
 
-Enjoy! If you find a mistake write to juraj.bodik@unil.ch
+Enjoy! If you have a comment or you find a mistake, write to juraj.bodik@unil.ch
