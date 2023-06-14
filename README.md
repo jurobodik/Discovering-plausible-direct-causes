@@ -1,4 +1,4 @@
-Welcome to the supplementary package of the manuscript 'Identifiability of direct causes of a target variable'
+Welcome to the supplementary package of the manuscript 'Discovering-plausible-direct-causes-of-a-target-variable'
 
 -In the script called 'Main functions' is the code for the function that estimates F-plausbile, F-identifiable parents of a target variable together with a score-based algorithm
 
