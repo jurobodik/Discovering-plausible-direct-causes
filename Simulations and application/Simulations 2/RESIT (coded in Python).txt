@@ -1,0 +1,87 @@
+#This is a code for evaluating RESIT performance for benchmark datasets. It is implemented in Python. This is one of my first experiences with python so its not perfect
+#Before this script, you need to send.feather that is implemented in script 'Simulations 2 results' or use other way how you can upload the bechmark datasets
+
+#RESIT
+import numpy as np
+import pandas as pd
+import graphviz
+import lingam
+from lingam.utils import print_causal_directions, print_dagc, make_dot
+from sklearn.ensemble import RandomForestRegressor
+import warnings
+warnings.filterwarnings('ignore')
+
+
+first_benchmark = pd.read_feather('first_benchmark')
+second_benchmark = pd.read_feather('second_benchmark')
+third_benchmark = pd.read_feather('third_benchmark') ; third_benchmark_graphs = pd.read_feather('third_benchmark_graphs')
+
+
+##################RESIT############################
+###########First benchmark##############
+result_RESIT1 = pd.DataFrame(columns=['1', '2', '3', '4'])
+for i in range(1, 50):
+    position = i
+    X = first_benchmark[first_benchmark['position'] == position].drop(first_benchmark.columns[0], axis=1)
+
+    model = lingam.RESIT(regressor=RandomForestRegressor(max_depth=4, random_state=0))
+    graph = model.fit(X).adjacency_matrix_[-1,:][0:4]
+    graph
+    result_RESIT1.loc[i] = graph
+
+correct_results = result_RESIT1['1'].sum() / len(result_RESIT1['1'])
+g = result_RESIT1.drop(result_RESIT1.columns[0], axis=1)
+g['sum'] = g.iloc[:, 0:3].sum(axis=1)
+zero_count = g['sum'].value_counts().get(0, 0)
+wrong_results = (len(result_RESIT1['1']) - zero_count) / len(result_RESIT1['1']) 
+
+print(correct_results, wrong_results)
+
+
+###########Second benchmark##############
+result_RESIT2 = pd.DataFrame(columns=['1', '2', '3'])
+for i in range(1, 50):
+    position = i
+    X = second_benchmark[second_benchmark['position'] == position].drop(second_benchmark.columns[0], axis=1)
+
+    model = lingam.RESIT(regressor=RandomForestRegressor(max_depth=4, random_state=0))
+    graph = model.fit(X).adjacency_matrix_[-1,:][0:3]
+    graph
+    result_RESIT2.loc[i] = graph
+
+correct_results = result_RESIT2['1'].sum() / len(result_RESIT2['1'])
+wrong_results = 0
+
+print(correct_results, wrong_results)
+
+###########Third benchmark##############
+result_RESIT3 = pd.DataFrame(columns=['1', '2', '3'])
+for i in range(1, 50):
+    position = i
+    X = third_benchmark[third_benchmark['position'] == position].drop(third_benchmark.columns[0], axis=1)
+
+
+    model = lingam.RESIT(regressor=RandomForestRegressor(max_depth=4, random_state=0))
+    graph = model.fit(X).adjacency_matrix_[-1,:][0:3]
+    graph
+    result_RESIT3.loc[i] = graph
+
+correct_results = 0
+for i in range(len(result_RESIT3)):
+    for j in range(0,3):
+        if result_RESIT3.iloc[i, j] == third_benchmark_graphs.iloc[i, j] == 1:
+            correct_results += 1
+correct_results  =  correct_results / third_benchmark_graphs.sum().sum()
+
+
+wrong_results = 0
+for i in range(0, len(result_RESIT3)):
+    for j in range(0, 3):
+        if result_RESIT3.iloc[i, j] == 1 and third_benchmark_graphs.iloc[i, j] == 0:
+            wrong_results += 1
+            break
+wrong_results  =  wrong_results / len(result_RESIT3)
+
+print(correct_results, wrong_results)
+
+
