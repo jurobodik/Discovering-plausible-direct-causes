@@ -1,0 +1,9 @@
+If you want to run Simulation 2, you need to upload functions from the following files: 
+
+Implementation of baseline methods.txt
+Main functions.txt
+Random_multivariate_functions_and_benchmarks.txt
+
+Then, you can run the file 'Simulations 2 results.txt'. If you want to run RESIT and CAM codes, that is a bit more complicated. In 'Simulations 2 results.txt' there is a feather to send the benchmark datasets to python mode and then you can run the 'RESIT and CAM.txt' file. However, you can just do whatever you think is easy to upload the benchmark datasets into python and then run the code in python. 
+
+
