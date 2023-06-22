@@ -86,7 +86,7 @@ library(feather)
 
 
 
-
+###################  And here is the code for the functions
 
 estimate_epsilon<-function(Y, X, constraint_set_F="Additive"){ 
   
