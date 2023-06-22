@@ -72,7 +72,7 @@ library(feather)
 #
 #X1 = rnorm(n); X2 = rnorm(n)
 #f=random_function_2d()  # this generates a random 2D function, check the plot3d()
-#Y = evaluation_of_f_2d(f, X1, X2)  + rnorm(n) 
+#Y = evaluation_of_f_2d(f, X1, X2)  + rnorm(n) #evaluation_of_f_2d(f, X1, X2) is basically just =f(X1, X2), but with a bit more ugly notation
 #X3 = Y^2 + X1 + rnorm(n)
 #
 #plot3d(x=X1, y=X2, z=Y)
