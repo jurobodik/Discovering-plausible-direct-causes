@@ -66,12 +66,12 @@ library(feather)
 #> 
   
 ##################################################Example 2 
-#You have to upload functions from script 'Random_multivariate_functions_and_benchmarks'
+#You have to upload functions from the script 'Random_multivariate_functions_and_benchmarks' to run this example
 
 #n=500
 #
 #X1 = rnorm(n); X2 = rnorm(n)
-#f=random_function_2d()
+#f=random_function_2d()  # this generates a random 2D function, check the plot3d()
 #Y = evaluation_of_f_2d(f, X1, X2)  + rnorm(n) 
 #X3 = Y^2 + X1 + rnorm(n)
 #
