@@ -11,9 +11,9 @@ n=500
 result = list()
 for (gamma in seq(0,1,by=0.2)) {
   result_gamma = list()
-for (c in seq(0,0.6,by=0.2)) { 
+for (c in seq(0,0.9,by=0.3)) { 
   result_gamma_c = c()
-  for (number_of_repetitions in 1:20) {
+  for (number_of_repetitions in 1:50) {
     
   Sigma <- matrix(c(1,c,c,1),2,2); v = mvrnorm(n, rep(0, 2), Sigma)
   
@@ -47,7 +47,7 @@ for (i in 2:4) lines(unlist( r[[i]] )~s, type = 'l', col = i, lwd=2)
 legend(
   "topleft",
   col = c(1,2,3,4),
-  legend = c(0, 0.2, 0.4, 0.6),
+  legend = c(0, 0.3, 0.6, 0.9),
   lwd = 2,
   title="c"
 )
