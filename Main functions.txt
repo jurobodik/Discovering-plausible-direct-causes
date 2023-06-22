@@ -47,7 +47,7 @@ library(feather)
 #Y = X1*X2  + rnorm(n)              #Watchout here! if you use e.g. Y = X1^2 + X2^2 + rnorm(n) this case is non-identifiable and also sets {X1}, {X2} are F-plausbile!
 #X3 = Y^2 + X1 + rnorm(n)
 #
-#IDS_and_score_based_estimation_of_F_parents(Y=Y, X=as.data.frame(cbind(X1, X2,X3)), constraint_set_F="Additive", show_intermediate_results=TRUE)
+#IDS_and_score_based_estimation_of_F_parents(Y=Y, X=as.data.frame(cbind(X1, X2,X3)), constraint_set_F="Additive", show_intermediate_results=FALSE)
 
 #And here is the typical result you should obtain
 #>                          score independence significance distribution
@@ -77,7 +77,7 @@ library(feather)
 #
 #plot3d(x=X1, y=X2, z=Y)
 #
-#IDS_and_score_based_estimation_of_F_parents(Y=Y, X=as.data.frame(cbind(X1, X2,X3)), constraint_set_F="Additive", show_intermediate_results=TRUE)
+#IDS_and_score_based_estimation_of_F_parents(Y=Y, X=as.data.frame(cbind(X1, X2,X3)), constraint_set_F="Additive", show_intermediate_results=FALSE)
 #F_identifiable_set_of_parents(Y=Y, X=as.data.frame(cbind(X1, X2, X3)), constraint_set_F="Additive")
 
 
