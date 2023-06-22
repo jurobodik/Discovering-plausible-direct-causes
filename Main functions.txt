@@ -1,6 +1,6 @@
 #############################################################################################################
 # In this script, you can find the implementation of the algorithms presented in Manuscript 'Identifiability of direct causes of a target variable'
-# The main function is 'IDS_and_score_based_estimation_of_F_parents'
+# The main function is 'IDS_and_score_based_estimation_of_F_parents()'
 # It takes as an input $Y$ as a target variable and $X=data.frame(X_1, \dots, X_p)$ as covariates. Moreover, 
 # it takes as an input 'constraint_set_F'. We implemented the following choices of 'constraint_set_F':
 # 'Additive'
@@ -9,9 +9,9 @@
 # 'Gamma'
 # 'Pareto'
 # 'Gumbel'
-#  If interested, for 'Additive' case we also implemented Random forest as a estimation method. If interested, replace 'Additive' by 'Additive_RF', but typically it gave us worse results than GAM
+#  If interested, for the 'Additive' case, we also implemented Random forest as an estimation method. If interested, replace 'Additive' by 'Additive_RF', but typically it gave us worse results than GAM
 #  If interested, implement your own class by adding an estimation method for epsilon (step 1 of the algorithm) in the estimate_epsilon() function
-#  We also implemented function 'F_identifiable_set_of_parents' that is faster but computes only F_identifiable set of parents, not the score nor F-plausbility of every set
+#  We also implemented function 'F_identifiable_set_of_parents' that is faster but computes only F_identifiable set of parents, not the score nor F-plausibility of every set
 #  See an example of usage below
 
 
