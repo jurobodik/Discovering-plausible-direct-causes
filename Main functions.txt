@@ -1,5 +1,5 @@
 #############################################################################################################
-# In this script, you can find the implementation of the algorithms presented in Manuscript 'Identifiability of direct causes of a target variable'
+# In this script, you can find the implementation of the algorithms presented in the Manuscript 'Structural restrictions in local causal discovery: identifying direct causes of a target variable'
 # The main function is 'IDS_and_score_based_estimation_of_F_parents()'
 # It takes as an input $Y$ as a target variable and $X=data.frame(X_1, \dots, X_p)$ as covariates. Moreover, 
 # it takes as an input 'constraint_set_F'. We implemented the following choices of 'constraint_set_F':
