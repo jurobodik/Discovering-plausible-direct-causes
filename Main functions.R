@@ -12,6 +12,7 @@
 # For the 'Additive' case, we also implemented Random forest as an estimation method. If interested, replace 'Additive' by 'Additive_RF' and run all simulations once more, but typically it gave us worse results than GAM
 #  If interested, implement your own class by adding an estimation method for epsilon (step 1 of the algorithm) in the estimate_epsilon() function
 #  We also implemented function 'F_identifiable_set_of_parents' that is faster but computes only F_identifiable set of parents, not the score nor F-plausibility of every set
+#  We always consider significance level alpha = 0.05
 #  See an example of usage below
 
 
