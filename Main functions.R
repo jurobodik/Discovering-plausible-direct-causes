@@ -15,7 +15,8 @@
 #  We always consider significance level alpha = 0.05
 #  See an example of usage below
 
-
+library(dHSIC)
+library(independence)
 library(copula)
 library(boot)
 library("evd")
@@ -25,9 +26,7 @@ library(CondIndTests)
 library("twosamples")
 library(tidyverse)
 library(kSamples)
-library(independence)
 library(Pareto)
-library(dHSIC)
 library(rje)
 library(stringr)
 library(TauStar)
